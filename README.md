@@ -180,7 +180,7 @@ The readme.md file located in the [/TeamCode/src/main/java/org/firstinspires/ftc
 * In OnBotJava, code folding support was added to expand and collapse code sections
 * In OnBotJava, the copyright header is now automatically collapsed loading new files
 * For all Blocks OpMode samples, intro comments have been moved to the RunOpMode comment balloon.
-* The Clean up Blocks command in the Blocks editor now positions function Blocks so their comment balloons don't overlap other function Blocks.
+* The Clean up Blocks command in [RedGreenTeleOp.java](..%2FFtcRobotControllerLOTUS%2FTeamCode%2Fsrc%2Fmain%2Fjava%2Forg%2Ffirstinspires%2Fftc%2Fteamcode%2FRedGreenTeleOp.java)the Blocks editor now positions function Blocks so their comment balloons don't overlap other function Blocks.
 * Added Blocks OpMode sample SensorTouch.
 * Added Java OpMode sample SensorDigitalTouch.
 * Several improvements to VisionPortal
