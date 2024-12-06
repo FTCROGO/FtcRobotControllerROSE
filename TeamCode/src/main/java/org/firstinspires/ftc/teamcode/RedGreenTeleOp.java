@@ -228,7 +228,7 @@ public class RedGreenTeleOp extends LinearOpMode {
 
             intakeOffset = Range.clip(intakeOffset, -0.5, 0.5);
             Intake.setPosition(0.5 + intakeOffset);
-
+// I'm also Darcy
 //Wrist - up (y), down (a) -------------------------------------------------------------
             if (gamepad2.y)
                 wristOffset += 0.2;
