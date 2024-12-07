@@ -40,6 +40,7 @@ import com.qualcomm.robotcore.util.Range;
 // find upper/lower linear slide limits, find linear slide speed intervals, decide on strafe buttons,
 // test wrist & intake system, push & commit, test everything
 
+// Sofia is commititng this day before redgreen---
 
 @TeleOp(name="Robot: RedGreenTeleOp", group="Robot")
 //@Disabled
