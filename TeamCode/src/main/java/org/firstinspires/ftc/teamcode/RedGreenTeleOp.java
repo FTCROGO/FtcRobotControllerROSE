@@ -98,6 +98,8 @@ public class RedGreenTeleOp extends LinearOpMode {
         mArm.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         mLS.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 
+        mArm.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+
         Intake  = hardwareMap.get(Servo.class, "Intake");
         Intake.setPosition(0.5);
         Wrist  = hardwareMap.get(Servo.class, "Wrist");
@@ -137,6 +139,7 @@ public class RedGreenTeleOp extends LinearOpMode {
                 frontLeft  /= maxFront;
                 frontRight /= maxFront;
             }
+            o
 
             mFL.setPower(frontLeft);
             mFR.setPower(frontRight);
@@ -245,10 +248,16 @@ public class RedGreenTeleOp extends LinearOpMode {
 // Send telemetry message to signify robot running;
             telemetry.addData("intake pos",  "Offset = %.2f", intakeOffset);
             telemetry.addData("wrist pos",  "Offset = %.2f", wristOffset);
+
             telemetry.addData("front left power",  "%.2f", frontLeft);
+            telemetry.addData("fl pow", "%.2f", mFL.getPower());
             telemetry.addData("front right power", "%.2f", frontRight);
+            telemetry.addData("fr pow", "%.2f", mFR.getPower());
             telemetry.addData("back left power",  "%.2f", backLeft);
+            telemetry.addData("bl pow", "%.2f", mBL.getPower());
             telemetry.addData("back right power", "%.2f", backRight);
+            telemetry.addData("br pow", "%.2f", mBR.getPower());
+
             telemetry.addData("arm power",  "%.2f", mArmPower);
             telemetry.addData("linear power", "%.2f", mLSPower);
             telemetry.addData("arm pos", mArm.getCurrentPosition());
