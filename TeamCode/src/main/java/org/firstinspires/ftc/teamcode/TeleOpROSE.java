@@ -36,9 +36,9 @@ import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.Range;
 
 
-@TeleOp(name="Robot: RedGreenTeleOp", group="Robot")
+@TeleOp(name="Robot: TeleOpROSE", group="Robot")
 //@Disabled
-public class RedGreenTeleOp extends LinearOpMode {
+public class TeleOpROSE extends LinearOpMode {
 
     public DcMotor  mFL  = null;
     public DcMotor  mFR  = null;
@@ -85,11 +85,10 @@ public class RedGreenTeleOp extends LinearOpMode {
         mFL.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         mFR.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         mBL.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        mBL.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        mBR.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         mArm.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         mLS.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 
-        mArm.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         mArm.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
 
         Intake  = hardwareMap.get(Servo.class, "Intake");
@@ -137,7 +136,6 @@ public class RedGreenTeleOp extends LinearOpMode {
 // Arm - up (Y), down (A)
             mArmPower = gamepad2.left_stick_y/1.5;
 
-            // NEEDED?? --------------------------------------------
             if (mArmPower > 1.0)
                 mArmPower   /= mArmPower;
 
@@ -169,6 +167,8 @@ public class RedGreenTeleOp extends LinearOpMode {
             if (mLSPower > 1.0)
                 mLSPower   /= mLSPower;
 
+            mLS.setPower(mLSPower);
+
     // Linear slide power decreases as position gets higher -------------------------
 //            if (mLS.getCurrentPosition() > a && mLSPower > 0)
 //                mLSPower   /= 1.5;
@@ -180,8 +180,6 @@ public class RedGreenTeleOp extends LinearOpMode {
     // Linear slide power cut in half as gets close to lower limit ------------------
 //            if (mLS.getCurrentPosition() < d && mLSPower < 0)
 //                mLSPower   /= 2;
-
-            mLS.setPower(mLSPower);
 
     // Linear lower limit --------------------------------------------
 //            if (mLS.getCurrentPosition() < 10) {
@@ -211,8 +209,6 @@ public class RedGreenTeleOp extends LinearOpMode {
 
             intakeOffset = Range.clip(intakeOffset, -0.5, 0.5);
             Intake.setPosition(0.5 + intakeOffset);
-// I'm also Darcy
-            // I'm also also also Darcy
 
 
 // Send telemetry message to signify robot running;
