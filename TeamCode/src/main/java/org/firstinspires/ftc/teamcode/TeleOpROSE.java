@@ -74,18 +74,14 @@ public class TeleOpROSE extends LinearOpMode {
 
         mFL.setDirection(DcMotor.Direction.REVERSE);
         mFR.setDirection(DcMotor.Direction.FORWARD);
-        mBL.setDirection(DcMotor.Direction.FORWARD);
-        mBR.setDirection(DcMotor.Direction.REVERSE);
+        mBL.setDirection(DcMotor.Direction.REVERSE);
+        mBR.setDirection(DcMotor.Direction.FORWARD);
         mArm.setDirection(DcMotor.Direction.REVERSE);
         mLS.setDirection(DcMotor.Direction.REVERSE);
 
         mArm.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
         mLS.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
-
-        mFL.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        mFR.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        mBL.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-        mBR.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        
         mArm.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         mLS.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 
