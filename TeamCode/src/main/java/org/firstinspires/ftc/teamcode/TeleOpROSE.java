@@ -35,7 +35,7 @@ import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.Range;
 
-
+//hi
 @TeleOp(name="Robot: TeleOpROSE", group="Robot")
 //@Disabled
 public class TeleOpROSE extends LinearOpMode {
